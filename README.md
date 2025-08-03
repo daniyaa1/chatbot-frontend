@@ -3,7 +3,7 @@ This is the frontend of the Ementora Chatbot – an AI-powered assistant built u
 It allows users to chat with Ementora AI and get instant responses powered by Google Gemini 1.5.
 
 🚀 Live Demo
-🔗 Try the chatbot here
+🔗 https://chatbot-frontend-seven-plum.vercel.app/
 
 🖥️ Tech Stack
 React 19 – Frontend framework
