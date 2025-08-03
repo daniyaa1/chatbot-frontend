@@ -15,9 +15,9 @@ export default function ChatWidget() {
     setInput("");
 
     try {
-      // ✅ Notice we now call the /chat endpoint
+      // ✅ Correct endpoint: /chat (no trailing space)
       const res = await fetch(
-        "https://chatbot-backend-jtq7.onrender.com/",
+        "https://chatbot-backend-jtq7.onrender.com/chat",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -57,3 +57,4 @@ export default function ChatWidget() {
     </div>
   );
 }
+
