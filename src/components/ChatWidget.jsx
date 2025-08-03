@@ -15,7 +15,7 @@ export default function ChatWidget() {
     setInput("");
 
     try {
-      const res = await fetch("http://localhost:5000/chat", {
+      const res = await fetch("https://chatbot-backend-production-993d.up.railway.app/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
