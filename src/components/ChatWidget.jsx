@@ -17,7 +17,7 @@ export default function ChatWidget() {
     try {
       // ✅ Notice we now call the /chat endpoint
       const res = await fetch(
-        "https://chatbot-backend-production-993d.up.railway.app/chat",
+        "https://chatbot-backend-jtq7.onrender.com/",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
