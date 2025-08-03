@@ -15,15 +15,22 @@ export default function ChatWidget() {
     setInput("");
 
     try {
-      const res = await fetch("https://chatbot-backend-production-993d.up.railway.app/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
-      });
+      // ✅ Notice we now call the /chat endpoint
+      const res = await fetch(
+        "https://chatbot-backend-production-993d.up.railway.app/chat",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: input }),
+        }
+      );
 
+      if (!res.ok) throw new Error("Server returned error");
       const data = await res.json();
+
       setMessages((prev) => [...prev, { sender: "bot", text: data.reply }]);
-    } catch {
+    } catch (err) {
+      console.error(err);
       setMessages((prev) => [
         ...prev,
         { sender: "bot", text: "Server not responding." }
@@ -40,14 +47,11 @@ export default function ChatWidget() {
       </div>
       <div className="input-area">
         <input
-  value={input}
-  onChange={(e) => setInput(e.target.value)}
-  onKeyDown={(e) => {
-    if (e.key === "Enter") sendMessage();
-  }}
-  placeholder="Type your question..."
-/>
-
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+          placeholder="Type your question..."
+        />
         <button onClick={sendMessage}>Send</button>
       </div>
     </div>
