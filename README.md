@@ -1,60 +1,74 @@
-Ementora Chatbot Frontend
-This is the frontend of the Ementora Chatbot – an AI-powered assistant built using React.
-It allows users to chat with Ementora AI and get instant responses powered by Google Gemini 1.5.
+# Ementora Chatbot – Frontend
 
-🚀 Live Demo
-🔗 https://chatbot-frontend-seven-plum.vercel.app/
+A React + Vite single-page app that provides the chat UI for Ementora AI. It connects to a backend API to send/receive messages and supports a clean, centered chat experience with avatars, a welcome card, and quick replies.
 
-🖥️ Tech Stack
-React 19 – Frontend framework
+## 🚀 Live App
 
-Vite – Fast build tool
+Frontend (production):
 
-CSS – Custom styling
+- https://chatbot-frontend-6bjo.vercel.app/
 
-Fetch API – For sending requests to the backend
+Note: The frontend requires a reachable backend API to respond to chats. See “Configuration” below.
 
-Vercel – Deployment platform for frontend
+## 🖥️ Tech Stack
 
-⚙️ Features
-✅ Chat with Ementora AI in real-time
+- React + Vite
+- CSS (custom styles)
+- Fetch API for network calls
+- Vercel for hosting
 
-✅ Clean and responsive UI
+## ✨ Features
 
-✅ Integrated with Gemini 1.5 API through backend
+- Centered chat UI with avatars (bot/user)
+- Persistent welcome card with quick-reply buttons
+- Typing indicator, timestamps, and auto-scroll
+- Connects to a backend `/chat` endpoint
 
-✅ Fully deployed with Vercel (frontend) + Render (backend)
+## ⚙️ Configuration
 
-🛠️ Local Development
-Follow these steps to run the frontend locally:
+This app reads the backend API URL from an environment variable:
 
-bash
-Copy
-Edit
-# 1️⃣ Clone the repository
-git clone <your-frontend-repo-link>.git
-cd frontend
+- `VITE_API_URL` — the base URL of your backend (do not include `/chat`).
 
-# 2️⃣ Install dependencies
+Examples:
+
+```bash
+# .env (local development)
+VITE_API_URL=http://localhost:5050
+```
+
+On Vercel, set `VITE_API_URL` in the Project → Settings → Environment Variables.
+
+Important: Do not commit secrets or private backend URLs to this repository.
+
+## 🛠️ Run Locally
+
+```bash
+# 1) Clone
+git clone <your-frontend-repo-url>
+cd chatbot-frontend
+
+# 2) Install deps
 npm install
 
-# 3️⃣ Start development server
+# 3) Configure backend URL
+echo "VITE_API_URL=http://localhost:5050" > .env
+
+# 4) Start dev server
 npm run dev
-The app will run locally at:
+# App runs at http://localhost:5173
+```
 
-arduino
-Copy
-Edit
-http://localhost:5173
-📡 Backend Connection
-The frontend communicates with the backend hosted at:
+## 🌐 Deploy
 
-bash
-Copy
-Edit
-https://chatbot-backend-jtq7.onrender.com/chat
-Make sure your backend is live before sending messages.
+Deploy on Vercel:
 
-📄 License
-This project is created for learning and demonstration purposes.
+1. Push this repo to GitHub.
+2. Import the repo in Vercel.
+3. Set `VITE_API_URL` in Vercel Environment Variables.
+4. Deploy.
+
+## 📄 License & Notes
+
+This project is for learning and demonstration purposes. The frontend does not contain any backend secrets and avoids embedding backend URLs in source code. Configure `VITE_API_URL` per environment.
 
