@@ -12,7 +12,7 @@ function App() {
           textShadow: "0 0 8px rgba(255,255,255,0.3)"
         }}
       >
-        Ementora AI 🤖
+
       </h1>
 
       <ChatWidget />
