@@ -20,7 +20,7 @@ export default function ChatWidget() {
     setIsLoading(true);
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || "https://chatbot-backend-jtq7.onrender.com";
+      const API_URL = import.meta.env.VITE_API_URL || "https://chatbot-backend-production-cd14.up.railway.app";
       const res = await fetch(`${API_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

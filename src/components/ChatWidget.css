@@ -6,9 +6,9 @@
   flex-direction: column;
   font-family: 'Segoe UI', system-ui, -apple-system, Roboto, 'Segoe UI', Arial, sans-serif;
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  transform: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: linear-gradient(180deg, #ffffff 0%, #fbfbff 100%);
   border: 1px solid rgba(106,90,205,0.12);
   border-radius: 12px;
